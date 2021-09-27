@@ -1,0 +1,42 @@
+GroceryGoods = Graph()
+
+
+GroceryGoods.addVertex('apple')
+GroceryGoods.addVertex('orange')
+GroceryGoods.addVertex('vegetable')
+GroceryGoods.addVertex('salad')
+GroceryGoods.addVertex('fan')
+GroceryGoods.addVertex('plug')
+
+GroceryGoods.addEdge('apple', 'orange', 87)  
+GroceryGoods.addEdge('apple', 'vegetable', 30)
+GroceryGoods.addEdge('apple', 'salad', 25)
+GroceryGoods.addEdge('apple', 'fan', 5)
+GroceryGoods.addEdge('apple', 'plug', 2)
+GroceryGoods.addEdge('orange', 'vegetable', 42)
+GroceryGoods.addEdge('orange', 'salad', 27)
+GroceryGoods.addEdge('orange', 'fan', 5)
+GroceryGoods.addEdge('orange', 'plug', 3)
+GroceryGoods.addEdge('vegetable', 'salad', 57)
+GroceryGoods.addEdge('vegetable', 'fan', 5)
+GroceryGoods.addEdge('vegetable', 'plug', 2)
+GroceryGoods.addEdge('salad', 'fan', 6)
+GroceryGoods.addEdge('salad', 'plug', 3)
+GroceryGoods.addEdge('fan', 'plug', 43)
+
+
+
+#################################################
+
+for v in GroceryGoods:
+    for w in v.getConnections():
+        vid = v.getID()
+        wid = w.getID()
+        
+        if v.getWeight(w) >10 :
+            
+            print (' {} , {} , {}'.format ( vid, wid, v.getWeight(w)))
+            
+            
+            
+            
